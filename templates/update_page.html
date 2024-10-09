@@ -1,0 +1,17 @@
+{% extends 'main.html' %}
+{% block content %}
+
+    <div class="header-bar">
+    <a href="{% url 'mainpage' %}">&#8592; Back</a>
+</div>
+    <div class="card-body">
+<h1>Edit Task</h1>
+
+<form method="POST" action="{% url "update_page" task.id %}">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="save">
+</form>
+    </div>
+
+{% endblock content %}

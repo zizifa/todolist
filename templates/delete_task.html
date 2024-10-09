@@ -1,0 +1,19 @@
+{% extends 'main.html' %}
+{% block content %}
+
+    <div class="header-bar">
+    <a href="{% url 'mainpage' %}">&#8592; Go Back</a>
+    </div>
+
+    <div class="card-body">
+    <h1>DELETE Task</h1>
+
+<form method="POST" action="{% url "delete_page" title %}">
+    {% csrf_token %}
+    <h1>are you sure?</h1>
+    <input class="button" type="submit" value="delete" class="btn btn-danger btn-sm">
+</form>
+    </div>
+
+
+{% endblock content %}
